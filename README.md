@@ -65,7 +65,16 @@ A modern, fluid, and battery-efficient **Hyprland** desktop environment configur
 | <kbd>Print</kbd> | اسکرین‌شات از ناحیه انتخابی صفحه |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Escape</kbd> | تسک منیجر و مانیتورینگ منابع سیستم |
 
-### ۳. مدیریت صفحات (Workspaces)
+### ۳. مدیریت چند مانیتور (Multi-Monitor Workflow)
+| میانبر | عملکرد |
+| :--- | :--- |
+| <kbd>Super</kbd> + <kbd>O</kbd> | **پرتاب آنی پنجره فعال به مانیتور دیگر (Other Monitor)** |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>←</kbd> / <kbd>→</kbd> | انتقال پنجره به مانیتور سمت چپ یا راست |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd> | سوییچ فوکوس و ماوس به مانیتور دیگر |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>←</kbd> / <kbd>→</kbd> | سوییچ فوکوس به مانیتور سمت چپ یا راست |
+| <kbd>Super</kbd> + کشیدن با کلیک چپ ماوس | درگ کردن و جابجایی آزاد پنجره بین مانیتورها |
+
+### ۴. مدیریت صفحات (Workspaces)
 | میانبر | عملکرد |
 | :--- | :--- |
 | <kbd>Super</kbd> + <kbd>1</kbd> تا <kbd>9</kbd> | رفتن به صفحه مربوطه |
