@@ -11,7 +11,21 @@ A modern, fluid, battery-efficient, and pixel-perfect **Hyprland** desktop envir
 
 ---
 
+## 💡 About The Setup
+
+This repository contains my personal, battle-tested dotfiles for **Hyprland** (Wayland compositor) running on **Ubuntu 26.04 LTS**. Designed from the ground up to achieve an effortless balance between aesthetic minimalism and high-speed developer productivity, this setup offers:
+
+- **Aesthetic Consistency:** Unified **Catppuccin Mocha** dark theme across Hyprland borders, Waybar capsules, Wofi launcher, Kitty terminal, GTK 3/4 themes, and Hyprlock.
+- **Dual-GPU Intelligence:** Clean Intel Iris Xe iGPU + NVIDIA GeForce RTX 4050 dGPU hybrid graphics execution with Aquamarine DRM auto-enumeration and zero screen tearing.
+- **Multi-Display Synergy:** Tailored for dual-monitor workflows (144Hz laptop screen + external Samsung display) with dedicated workspace mapping, instant window throwing (<kbd>Super</kbd> + <kbd>O</kbd>), and directional screen focus.
+- **Minimalist Glass Lock Screen:** Ultra-subtle, non-distracting glassmorphic `hyprlock` screen with clean typography, soft monochrome palette, and zero unnecessary visual clutter.
+- **Integrated Productivity Suite:** Quick floating scratchpads, instant calculator, clipboard manager with search, color picker, wallpaper switcher, and desktop hardware telemetry widgets.
+- **Reproducible & Safe Deployment:** Turnkey installation via `make install` or `./install.sh`, complete with timestamped backups of existing configurations.
+
+---
+
 ## 📑 Table of Contents
+- [About The Setup](#-about-the-setup)
 - [Key Features](#-key-features)
 - [Workspace Organization](#-workspace-organization)
 - [Keyboard Shortcut Cheat Sheet](#-keyboard-shortcut-cheat-sheet)
