@@ -205,8 +205,8 @@
                 "󰕾"
             ]
         },
-        "tooltip-format": "{desc} ({volume}%)\nClick: Audio Mixer (pavucontrol)\nRight-Click: Mute/Unmute\nMiddle-Click: Switch Audio Output",
-        "on-click": "pavucontrol",
+        "tooltip-format": "{desc} ({volume}%)\nClick: Sound Settings\nRight-Click: Mute/Unmute\nMiddle-Click: Switch Audio Output",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-middle": "/home/pooryasn/.config/hypr/scripts/audioswitcher.py"
     },
@@ -220,7 +220,7 @@
         "format-connected-battery": "󰂱 {device_alias} 󰥉 {device_battery_percentage}%",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\nClick: Bluetooth Manager\nRight-Click: Toggle Bluetooth",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}\nClick: Bluetooth Manager\nRight-Click: Toggle Bluetooth",
-        "on-click": "blueman-manager",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center bluetooth",
         "on-click-right": "rfkill toggle bluetooth"
     },
 
