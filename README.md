@@ -175,7 +175,7 @@ For full functionality on Ubuntu / Debian-based systems:
 
 ```bash
 sudo apt update && sudo apt install -y \
-  hyprland waybar wofi dunst hyprpaper hyprlock hypridle \
+  hyprland waybar wofi dunst hyprpaper hyprlock hypridle hyprland-qtutils \
   grim slurp wl-clipboard cliphist playerctl libnotify-bin \
   gir1.2-gtk-3.0 gir1.2-gtklayershell-0.1 python3-psutil \
   gnome-calculator ptyxis fonts-font-awesome
