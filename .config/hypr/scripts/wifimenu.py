@@ -12,8 +12,10 @@ def notify(title, msg, icon="network-wireless"):
     subprocess.Popen(["notify-send", "-i", icon, title, msg])
 
 def main():
-    # 1. Fetch available Wi-Fi networks
-    raw = run_cmd(["nmcli", "-t", "-f", "IN-USE,SSID,SIGNAL,SECURITY", "device", "wifi", "list"])
+    # 1. Fetch available Wi-Fi networks (use fast cached scan)
+    raw = run_cmd(["nmcli", "-t", "-f", "IN-USE,SSID,SIGNAL,SECURITY", "device", "wifi", "list", "--rescan", "no"])
+    if not raw.strip():
+        raw = run_cmd(["nmcli", "-t", "-f", "IN-USE,SSID,SIGNAL,SECURITY", "device", "wifi", "list"])
     networks = {}
 
     for line in raw.strip().split("\n"):
@@ -85,7 +87,7 @@ def main():
         return
 
     if "Network Settings" in selected:
-        subprocess.Popen(["env", "XDG_CURRENT_DESKTOP=GNOME", "gnome-control-center", "wifi"])
+        subprocess.Popen(["nm-connection-editor"])
         return
 
     ssid = items_map.get(selected)

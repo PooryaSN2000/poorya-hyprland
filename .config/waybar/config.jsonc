@@ -20,6 +20,7 @@
         "group/connectivity",
         "group/hardware",
         "tray",
+        "custom/control-center",
         "custom/power"
     ],
 
@@ -85,6 +86,7 @@
         "modules": [
             "hyprland/language",
             "pulseaudio",
+            "bluetooth",
             "network"
         ]
     },
@@ -188,7 +190,7 @@
     },
 
     "pulseaudio": {
-        "scroll-step": 5,
+        "scroll-step": 2,
         "format": "{icon} {volume}%",
         "format-muted": "󰝟 Muted",
         "format-icons": {
@@ -204,9 +206,23 @@
                 "󰕾"
             ]
         },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-middle": "/home/pooryasn/.config/hypr/scripts/audioswitcher.py",
-        "on-click-right": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound"
+        "tooltip-format": "{desc} ({volume}%)\nClick: Audio Mixer (pavucontrol)\nRight-Click: Mute/Unmute\nMiddle-Click: Switch Audio Output",
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "/home/pooryasn/.config/hypr/scripts/audioswitcher.py"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} 󰥉 {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\nClick: Bluetooth Manager\nRight-Click: Toggle Bluetooth",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}\nClick: Bluetooth Manager\nRight-Click: Toggle Bluetooth",
+        "on-click": "blueman-manager",
+        "on-click-right": "rfkill toggle bluetooth"
     },
 
     "network": {
@@ -214,9 +230,14 @@
         "format-ethernet": "󰈀 {ipaddr}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰤭 Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr}\nClick: Connect to Wi-Fi",
+        "format-disabled": "󰤭 Off",
+        "tooltip-format": "{ifname} via {gwaddr}\nIP: {ipaddr}\nClick: Wi-Fi Networks Menu\nRight-Click: Toggle Wi-Fi Power\nMiddle-Click: Network Connections Editor",
+        "tooltip-format-wifi": "SSID: {essid} ({signalStrength}%)\nIP: {ipaddr}\nFrequency: {frequency}MHz\nClick: Wi-Fi Networks Menu\nRight-Click: Toggle Wi-Fi Power\nMiddle-Click: Network Connections Editor",
+        "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}\nClick: Wi-Fi Networks Menu\nRight-Click: Toggle Wi-Fi Power\nMiddle-Click: Network Connections Editor",
+        "tooltip-format-disconnected": "Network Disconnected\nClick: Wi-Fi Networks Menu\nRight-Click: Toggle Wi-Fi Power",
         "on-click": "/home/pooryasn/.config/hypr/scripts/wifimenu.py",
-        "on-click-right": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
+        "on-click-right": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && nmcli radio wifi off || nmcli radio wifi on'",
+        "on-click-middle": "nm-connection-editor"
     },
 
     "power-profiles-daemon": {
@@ -277,6 +298,13 @@
     "tray": {
         "icon-size": 16,
         "spacing": 8
+    },
+
+    "custom/control-center": {
+        "format": "󰂚",
+        "tooltip": true,
+        "tooltip-format": "Control Center & Quick Settings (Super + N)",
+        "on-click": "swaync-client -t -sw"
     },
 
     "custom/power": {

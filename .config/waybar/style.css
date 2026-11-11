@@ -58,6 +58,7 @@ tooltip {
 #group-hardware,
 .hardware,
 #tray,
+#custom-control-center,
 #custom-power {
     background-color: rgba(30, 30, 46, 0.95);
     background-clip: padding-box;
@@ -291,12 +292,31 @@ tooltip {
     background-color: rgba(137, 180, 250, 0.25);
 }
 
+/* Bluetooth */
+#bluetooth {
+    color: #89dceb;
+}
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #6c7086;
+}
+#bluetooth.connected {
+    color: #a6e3a1;
+}
+#bluetooth:hover {
+    color: #ffffff;
+    background-color: rgba(137, 220, 235, 0.25);
+}
+
 /* Network */
 #network {
     color: #a6e3a1;
 }
 #network.disconnected {
     color: #f38ba8;
+}
+#network.disabled {
+    color: #6c7086;
 }
 #network:hover {
     color: #ffffff;
@@ -379,6 +399,22 @@ tooltip {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #f38ba8;
+}
+
+/* Control Center Button */
+#custom-control-center {
+    font-size: 15px;
+    color: #cba6f7;
+    padding: 0;
+    margin: 0 4px;
+    min-width: 34px;
+    min-height: 28px;
+}
+
+#custom-control-center:hover {
+    background-color: #cba6f7;
+    color: #11111b;
+    border-color: #cba6f7;
 }
 
 /* Power Menu Button (Pixel-Perfect Center) */

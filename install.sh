@@ -21,7 +21,7 @@ BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
 # 1. Backup existing configurations
 echo -e "\n${YELLOW}==> [1/4] Backing up existing configurations...${NC}"
 mkdir -p "$BACKUP_DIR"
-for dir in hypr waybar wofi dunst gtk-3.0 gtk-4.0 xdg-desktop-portal; do
+for dir in hypr waybar wofi dunst swaync gtk-3.0 gtk-4.0 Thunar xfce4 xdg-desktop-portal; do
     if [ -d "$TARGET_CONFIG/$dir" ]; then
         echo "    Backing up $dir -> $BACKUP_DIR/$dir"
         cp -r "$TARGET_CONFIG/$dir" "$BACKUP_DIR/"

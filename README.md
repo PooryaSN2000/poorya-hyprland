@@ -85,9 +85,10 @@ Applications are mapped to dedicated workspaces to maintain a focused workflow:
 ### 1. Applications & Window Navigation
 | Shortcut | Action |
 | :--- | :--- |
-| <kbd>Super</kbd> + <kbd>Enter</kbd> | Launch Default Terminal (**Ptyxis**) |
+| <kbd>Super</kbd> + <kbd>Enter</kbd> | Launch Default Terminal (**Kitty**) |
 | <kbd>Super</kbd> + <kbd>Space</kbd> / <kbd>Super</kbd> + <kbd>R</kbd> | Open Application Launcher (**Wofi**) |
-| <kbd>Super</kbd> + <kbd>E</kbd> | Launch File Manager (**Nautilus**) |
+| <kbd>Super</kbd> + <kbd>E</kbd> | Launch Fast Minimal File Manager (**Thunar**) |
+| <kbd>Super</kbd> + <kbd>N</kbd> | Toggle **Control Center & Quick Settings** (**SwayNC**) |
 | <kbd>Super</kbd> + <kbd>I</kbd> | Open System Settings (**GNOME Control Center**) |
 | <kbd>Super</kbd> + <kbd>Q</kbd> | Close Focused Window |
 | <kbd>Super</kbd> + <kbd>F</kbd> | Toggle Window Fullscreen |

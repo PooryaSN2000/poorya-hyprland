@@ -1,314 +1,213 @@
 /* -----------------------------------------------------------------------------
- * Catppuccin Mocha Aesthetic Theme for GTK4 & Libadwaita (GNOME Files / Nautilus)
+ * Catppuccin Mocha Theme for GTK3 (Thunar, Pavucontrol, Blueman, nm-applet)
  * -------------------------------------------------------------------------- */
 
-/* Palette Variables */
-@define-color accent_color #cba6f7;
-@define-color accent_bg_color #cba6f7;
-@define-color accent_fg_color #11111b;
+@define-color base00 #1e1e2e; /* Base */
+@define-color base01 #181825; /* Mantle */
+@define-color base02 #11111b; /* Crust */
+@define-color base03 #313244; /* Surface0 */
+@define-color base04 #45475a; /* Surface1 */
+@define-color base05 #cdd6f4; /* Text */
+@define-color base06 #f5e0dc; /* Rosewater */
+@define-color accent #cba6f7; /* Mauve */
 
-@define-color destructive_color #f38ba8;
-@define-color destructive_bg_color #f38ba8;
-@define-color destructive_fg_color #11111b;
-
-@define-color success_color #a6e3a1;
-@define-color success_bg_color #a6e3a1;
-@define-color success_fg_color #11111b;
-
-@define-color warning_color #f9e2af;
-@define-color warning_bg_color #f9e2af;
-@define-color warning_fg_color #11111b;
-
-@define-color error_color #f38ba8;
-@define-color error_bg_color #f38ba8;
-@define-color error_fg_color #11111b;
-
-@define-color window_bg_color #1e1e2e;
-@define-color window_fg_color #cdd6f4;
-
-@define-color view_bg_color #1e1e2e;
-@define-color view_fg_color #cdd6f4;
-
-@define-color headerbar_bg_color #181825;
-@define-color headerbar_fg_color #cdd6f4;
-@define-color headerbar_border_color #313244;
-@define-color headerbar_backdrop_color #11111b;
-
-@define-color card_bg_color #181825;
-@define-color card_fg_color #cdd6f4;
-@define-color card_border_color #313244;
-
-@define-color dialog_bg_color #1e1e2e;
-@define-color dialog_fg_color #cdd6f4;
-
-@define-color popover_bg_color #181825;
-@define-color popover_fg_color #cdd6f4;
-
-@define-color shade_color rgba(0, 0, 0, 0.4);
-@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
-
-@define-color sidebar_bg_color #181825;
-@define-color sidebar_fg_color #cdd6f4;
-@define-color sidebar_backdrop_color #11111b;
-@define-color sidebar_border_color #313244;
-
-@define-color secondary_sidebar_bg_color #181825;
-@define-color secondary_sidebar_fg_color #cdd6f4;
-@define-color secondary_sidebar_backdrop_color #11111b;
-
-/* Window & General Styling */
+/* Window & General Colors */
+window,
 window.background {
-    background-color: #1e1e2e;
-    color: #cdd6f4;
+    background-color: @base00;
+    color: @base05;
 }
 
-/* Headerbar */
-headerbar {
-    background-color: #181825;
-    border-bottom: 1px solid #313244;
+/* Header & Toolbars */
+headerbar,
+toolbar {
+    background-color: @base01;
+    border-bottom: 1px solid @base03;
     box-shadow: none;
-    padding: 4px 8px;
+    padding: 4px;
 }
 
-headerbar button {
-    border-radius: 8px;
-    padding: 5px 10px;
-    margin: 2px;
-    background-color: transparent;
-    color: #cdd6f4;
+/* Buttons */
+button {
+    background-color: @base03;
+    color: @base05;
     border: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
-}
-
-headerbar button:hover {
-    background-color: rgba(203, 166, 247, 0.15);
-    border-color: rgba(203, 166, 247, 0.3);
-    color: #cba6f7;
-}
-
-headerbar button:active,
-headerbar button:checked {
-    background-color: #cba6f7;
-    color: #11111b;
-}
-
-/* Nautilus Sidebar */
-.navigation-sidebar,
-sidebar {
-    background-color: #181825;
-    border-right: 1px solid #313244;
-    padding: 8px 4px;
-}
-
-.navigation-sidebar row,
-sidebar row {
-    border-radius: 10px;
-    margin: 2px 6px;
-    padding: 6px 10px;
-    color: #a6adc8;
+    border-radius: 8px;
+    padding: 5px 12px;
     transition: all 0.2s ease;
 }
 
-.navigation-sidebar row:hover,
-sidebar row:hover {
-    background-color: rgba(205, 214, 244, 0.08);
-    color: #cdd6f4;
+button:hover {
+    background-color: rgba(203, 166, 247, 0.18);
+    border-color: rgba(203, 166, 247, 0.35);
+    color: @accent;
 }
 
-.navigation-sidebar row:selected,
-sidebar row:selected {
-    background-color: rgba(203, 166, 247, 0.2);
-    border: 1px solid rgba(203, 166, 247, 0.4);
-    color: #cba6f7;
+button:active,
+button:checked {
+    background-color: @accent;
+    color: @base02;
+}
+
+/* Thunar Custom Modern Styling */
+.thunar,
+thunar-window {
+    background-color: @base00;
+}
+
+thunar-window .shortcuts-pane,
+thunar-window .standard-view {
+    background-color: @base00;
+}
+
+thunar-window .sidebar {
+    background-color: @base01;
+    border-right: 1px solid @base03;
+}
+
+thunar-window .sidebar row {
+    border-radius: 8px;
+    margin: 2px 4px;
+    padding: 6px 10px;
+    color: #a6adc8;
+}
+
+thunar-window .sidebar row:hover {
+    background-color: rgba(205, 214, 244, 0.08);
+    color: @base05;
+}
+
+thunar-window .sidebar row:selected {
+    background-color: rgba(203, 166, 247, 0.22);
+    color: @accent;
     font-weight: 600;
 }
 
-/* Breadcrumbs / Path Bar */
-.path-bar button {
+/* Thunar Pathbar (Breadcrumbs) */
+.thunar .path-bar-button {
+    background-color: @base03;
+    border: 1px solid @base04;
     border-radius: 8px;
+    color: @base05;
     margin: 2px 3px;
     padding: 4px 10px;
-    background-color: rgba(49, 50, 68, 0.6);
-    border: 1px solid #313244;
-    color: #cdd6f4;
-    transition: all 0.2s ease;
 }
 
-.path-bar button:hover {
+.thunar .path-bar-button:hover {
     background-color: rgba(203, 166, 247, 0.2);
-    border-color: #cba6f7;
-    color: #cba6f7;
+    border-color: @accent;
+    color: @accent;
 }
 
-.path-bar button.current-dir {
-    background-color: rgba(203, 166, 247, 0.25);
-    border-color: #cba6f7;
-    color: #cba6f7;
+.thunar .path-bar-button:checked {
+    background-color: rgba(203, 166, 247, 0.3);
+    border-color: @accent;
+    color: @accent;
     font-weight: bold;
 }
 
-/* Search Entry & Inputs */
-entry,
-searchbar entry {
-    background-color: #181825;
-    border: 1px solid #45475a;
-    border-radius: 10px;
-    padding: 6px 12px;
-    color: #cdd6f4;
-    transition: all 0.2s ease;
+/* Inputs & Search Entries */
+entry {
+    background-color: @base01;
+    border: 1px solid @base04;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: @base05;
 }
 
-entry:focus,
-searchbar entry:focus {
-    border-color: #cba6f7;
-    box-shadow: 0 0 0 1px #cba6f7;
+entry:focus {
+    border-color: @accent;
+    box-shadow: 0 0 0 1px @accent;
 }
 
-/* File View Grid & List Items */
-.view,
-scrolledwindow.view {
-    background-color: #1e1e2e;
-    color: #cdd6f4;
-}
-
-/* Nautilus File Cards / Icons */
-.nautilus-canvas-item,
-.view file-item,
-.view row {
-    border-radius: 10px;
+/* Ultra-Clean Modern Context Menus (Right-Click) */
+menu,
+.menu,
+.context-menu {
+    background-color: @base01;
+    border: 1px solid @base03;
+    border-radius: 12px;
     padding: 6px;
-    margin: 2px;
-    transition: all 0.15s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
-.nautilus-canvas-item:hover,
-.view file-item:hover,
-.view row:hover {
-    background-color: rgba(205, 214, 244, 0.08);
+menuitem,
+.menuitem {
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 6px 12px;
+    margin: 1px 2px;
+    color: @base05;
+    border: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.nautilus-canvas-item:selected,
-.view file-item:selected,
-.view row:selected {
-    background-color: rgba(203, 166, 247, 0.22);
-    border: 1px solid rgba(203, 166, 247, 0.5);
-    color: #cdd6f4;
+menuitem:hover,
+.menuitem:hover {
+    background-color: rgba(203, 166, 247, 0.18);
+    color: @accent;
 }
 
-/* Minimal Modern Scrollbars */
+menuitem:hover label,
+.menuitem:hover label {
+    color: @accent;
+    font-weight: 500;
+}
+
+menuitem:disabled,
+menuitem:disabled label {
+    color: #585b70;
+}
+
+menu separator {
+    min-height: 1px;
+    background-color: @base03;
+    margin: 4px 6px;
+}
+
+/* Minimal Scrollbars */
 scrollbar {
     background: transparent;
     border: none;
-    transition: all 0.2s ease;
 }
 
 scrollbar slider {
     min-width: 6px;
     min-height: 6px;
-    border-radius: 10px;
-    background-color: rgba(108, 112, 134, 0.4);
-    border: none;
+    border-radius: 8px;
+    background-color: rgba(108, 112, 134, 0.35);
 }
 
 scrollbar slider:hover {
     background-color: rgba(203, 166, 247, 0.6);
 }
 
-/* Floating Status Overlay */
-.floating-bar {
-    background-color: rgba(24, 24, 37, 0.95);
-    border: 1px solid #313244;
-    border-radius: 10px;
-    padding: 4px 10px;
-    color: #cdd6f4;
-    margin: 8px;
+/* Pavucontrol & Blueman specific tweaks */
+tabbox,
+notebook header {
+    background-color: @base01;
+    border-bottom: 1px solid @base03;
 }
 
-/* GTK3 Popup Menus (nm-applet, Tray menus, Context menus) */
-window.popup,
-window.background.popup,
-window.menu {
-    background-color: transparent;
-    background-image: none;
-    border: none;
-    box-shadow: none;
+notebook tab {
+    padding: 6px 16px;
+    border-radius: 8px 8px 0 0;
+    color: #a6adc8;
 }
 
-menu,
-.menu,
-.context-menu,
-GtkMenu,
-popover.menu,
-popover,
-.popover {
-    background-color: #1e1e2e;
-    background-image: none;
-    border: 1px solid #45475a;
-    border-radius: 12px;
-    padding: 6px;
-    color: #cdd6f4;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+notebook tab:checked {
+    background-color: @base00;
+    color: @accent;
+    border-bottom: 2px solid @accent;
 }
 
-menuitem,
-.menuitem,
-GtkMenuItem {
-    background-color: transparent;
-    background-image: none;
-    color: #cdd6f4;
-    padding: 6px 12px;
-    margin: 1px 2px;
+scale trough {
+    background-color: @base03;
     border-radius: 8px;
-    border: none;
+    min-height: 6px;
 }
 
-menuitem label,
-.menuitem label,
-menu label,
-GtkMenuItem GtkLabel,
-GtkAccelLabel {
-    color: #cdd6f4;
-    font-weight: 500;
-}
-
-menuitem:hover,
-.menuitem:hover,
-GtkMenuItem:hover {
-    background-color: #cba6f7;
-    background-image: none;
-    color: #11111b;
-}
-
-menuitem:hover label,
-.menuitem:hover label,
-menuitem:hover GtkLabel,
-menuitem:hover GtkAccelLabel,
-menuitem:hover * {
-    color: #11111b;
-}
-
-menuitem:disabled,
-menuitem:disabled label,
-menuitem:disabled GtkAccelLabel {
-    color: #6c7086;
-}
-
-menu separator,
-separator {
-    min-height: 1px;
-    background-color: #313244;
-    margin: 4px 6px;
-    border: none;
-}
-
-menu check,
-menu radio {
-    min-height: 14px;
-    min-width: 14px;
-    margin-right: 6px;
-}
-
-menu check:checked,
-menu radio:checked {
-    color: #cba6f7;
+scale highlight {
+    background-color: @accent;
+    border-radius: 8px;
 }

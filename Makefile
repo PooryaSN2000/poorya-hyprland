@@ -22,7 +22,7 @@ help:
 backup:
 	@echo "==> Creating backup in $(BACKUP_DIR)..."
 	@mkdir -p $(BACKUP_DIR)
-	@for dir in hypr waybar wofi dunst gtk-3.0 gtk-4.0 xdg-desktop-portal; do \
+	@for dir in hypr waybar wofi dunst swaync gtk-3.0 gtk-4.0 Thunar xfce4 xdg-desktop-portal; do \
 		if [ -d "$(TARGET_DIR)/$$dir" ]; then \
 			cp -r "$(TARGET_DIR)/$$dir" "$(BACKUP_DIR)/" && echo "    Backed up $$dir"; \
 		fi \

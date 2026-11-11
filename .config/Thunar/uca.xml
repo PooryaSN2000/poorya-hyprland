@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Kitty Here</name>
+	<submenu></submenu>
+	<unique-id>1700000000000000-1</unique-id>
+	<command>kitty --directory %f</command>
+	<description>Open Kitty Terminal in this folder</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>code</icon>
+	<name>Open with VSCode</name>
+	<submenu></submenu>
+	<unique-id>1700000000000000-2</unique-id>
+	<command>code %f</command>
+	<description>Open folder or file in VSCode</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+	<other-files/>
+</action>
+<action>
+	<icon>preferences-desktop-wallpaper</icon>
+	<name>Set as Wallpaper</name>
+	<submenu></submenu>
+	<unique-id>1700000000000000-3</unique-id>
+	<command>cp %f ~/.config/hypr/wallpapers/current_wallpaper.png &amp;&amp; hyprctl hyprpaper preload %f &amp;&amp; hyprctl hyprpaper wallpaper ",%f"</command>
+	<description>Set selected image as wallpaper</description>
+	<range></range>
+	<patterns>*.png;*.jpg;*.jpeg;*.webp</patterns>
+	<image-files/>
+</action>
+</actions>
