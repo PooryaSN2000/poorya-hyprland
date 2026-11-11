@@ -1,0 +1,103 @@
+{
+    "name": "dock",
+    "layer": "top",
+    "position": "bottom",
+    "height": 56,
+    "width": 504,
+    "margin-bottom": 12,
+
+    "modules-center": [
+        "custom/launcher",
+        "custom/sep1",
+        "custom/browser",
+        "custom/code",
+        "custom/antigravity",
+        "custom/notes",
+        "custom/terminal",
+        "custom/files",
+        "custom/telegram",
+        "custom/karing",
+        "custom/sep2",
+        "custom/settings"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "All Applications (Super + Space)",
+        "on-click": "wofi --show drun --allow-images"
+    },
+
+    "custom/sep1": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    "custom/browser": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Google Chrome (Browser)",
+        "on-click": "google-chrome"
+    },
+
+    "custom/code": {
+        "format": "󰨞",
+        "tooltip": true,
+        "tooltip-format": "Visual Studio Code",
+        "on-click": "code"
+    },
+
+    "custom/antigravity": {
+        "format": "󰚩",
+        "tooltip": true,
+        "tooltip-format": "Antigravity (AI IDE)",
+        "on-click": "antigravity"
+    },
+
+    "custom/notes": {
+        "format": "󰠮",
+        "tooltip": true,
+        "tooltip-format": "Notes (Text Editor)",
+        "on-click": "gnome-text-editor"
+    },
+
+    "custom/terminal": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Terminal (GNOME Terminal / Super + Enter)",
+        "on-click": "gnome-terminal"
+    },
+
+    "custom/files": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Files (Nautilus / Super + E)",
+        "on-click": "nautilus"
+    },
+
+    "custom/telegram": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Telegram Desktop",
+        "on-click": "telegram-desktop"
+    },
+
+    "custom/karing": {
+        "format": "󰖂",
+        "tooltip": true,
+        "tooltip-format": "Karing (VPN / Proxy)",
+        "on-click": "karing"
+    },
+
+    "custom/sep2": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    "custom/settings": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Settings (Super + I)",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+    }
+}

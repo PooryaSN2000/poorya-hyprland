@@ -1,0 +1,168 @@
+/* -----------------------------------------------------------------------------
+ * Catppuccin Mocha Frosted Glass Floating Dock (Centered & Symmetrical)
+ * -------------------------------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome", sans-serif;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    -gtk-icon-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Frosted Glass Floating Capsule */
+window#waybar > box,
+.modules-center {
+    background-color: rgba(30, 30, 46, 0.65);
+    background-clip: padding-box;
+    border: 1px solid rgba(205, 214, 244, 0.22);
+    border-radius: 20px;
+    padding: 4px 6px;
+    box-shadow: none;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(24, 24, 37, 0.98);
+    border: 1px solid #45475a;
+    border-radius: 10px;
+    padding: 6px 12px;
+    color: #cdd6f4;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+/* Balanced Centered App Icons */
+#custom-launcher,
+#custom-browser,
+#custom-code,
+#custom-antigravity,
+#custom-notes,
+#custom-terminal,
+#custom-files,
+#custom-telegram,
+#custom-karing,
+#custom-settings {
+    font-size: 20px;
+    min-width: 20px;
+    padding: 6px 10px;
+    margin: 2px 1px;
+    border-radius: 12px;
+    color: #cdd6f4;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Separator Bars */
+#custom-sep1,
+#custom-sep2 {
+    color: rgba(69, 71, 90, 0.7);
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+/* App-Specific Aesthetic Hover Styles */
+#custom-launcher {
+    color: #cba6f7;
+}
+#custom-launcher:hover {
+    background-color: rgba(203, 166, 247, 0.28);
+    border-color: #cba6f7;
+    color: #cba6f7;
+}
+
+#custom-browser {
+    color: #89b4fa;
+}
+#custom-browser:hover {
+    background-color: rgba(137, 180, 250, 0.28);
+    border-color: #89b4fa;
+    color: #89b4fa;
+}
+
+#custom-code {
+    color: #89dceb;
+}
+#custom-code:hover {
+    background-color: rgba(137, 220, 235, 0.28);
+    border-color: #89dceb;
+    color: #89dceb;
+}
+
+#custom-antigravity {
+    color: #f5c2e7;
+}
+#custom-antigravity:hover {
+    background-color: rgba(245, 194, 231, 0.28);
+    border-color: #f5c2e7;
+    color: #f5c2e7;
+}
+
+#custom-notes {
+    color: #f9e2af;
+}
+#custom-notes:hover {
+    background-color: rgba(249, 226, 175, 0.28);
+    border-color: #f9e2af;
+    color: #f9e2af;
+}
+
+#custom-terminal {
+    color: #a6e3a1;
+}
+#custom-terminal:hover {
+    background-color: rgba(166, 227, 161, 0.28);
+    border-color: #a6e3a1;
+    color: #a6e3a1;
+}
+
+#custom-files {
+    color: #fab387;
+}
+#custom-files:hover {
+    background-color: rgba(250, 179, 135, 0.28);
+    border-color: #fab387;
+    color: #fab387;
+}
+
+#custom-telegram {
+    color: #74c7ec;
+}
+#custom-telegram:hover {
+    background-color: rgba(116, 199, 236, 0.28);
+    border-color: #74c7ec;
+    color: #74c7ec;
+}
+
+#custom-karing {
+    color: #cba6f7;
+}
+#custom-karing:hover {
+    background-color: rgba(203, 166, 247, 0.28);
+    border-color: #cba6f7;
+    color: #cba6f7;
+}
+
+#custom-settings {
+    color: #bac2de;
+}
+#custom-settings:hover {
+    background-color: rgba(186, 194, 222, 0.28);
+    border-color: #bac2de;
+    color: #bac2de;
+}

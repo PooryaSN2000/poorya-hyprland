@@ -1,0 +1,79 @@
+/* -----------------------------------------------------------------------------
+ * Catppuccin Mocha Wofi Styling (100% Solid Dark Background, Razor Sharp)
+ * -------------------------------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13.5px;
+}
+
+window {
+    margin: 0px;
+    background-color: #1e1e2e;
+    border: 2px solid #cba6f7;
+    border-radius: 16px;
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 8px;
+    border: none;
+    background-color: #1e1e2e;
+    border-radius: 16px;
+}
+
+#input {
+    margin: 10px 10px 8px 10px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid #45475a;
+    color: #cdd6f4;
+    background-color: #181825;
+}
+
+#input:focus {
+    border: 1px solid #cba6f7;
+    outline: none;
+}
+
+#inner-box {
+    margin: 4px 6px 10px 6px;
+    border: none;
+    background-color: #1e1e2e;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+    background-color: #1e1e2e;
+}
+
+#text {
+    margin: 4px 8px;
+    border: none;
+    color: #cdd6f4;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+#entry {
+    margin: 2px 0px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e1e2e;
+    transition: all 0.15s ease;
+}
+
+#entry:hover {
+    background-color: rgba(203, 166, 247, 0.15);
+}
+
+#entry:selected {
+    background-color: #cba6f7;
+}
+
+#entry:selected #text {
+    color: #11111b;
+    font-weight: bold;
+}

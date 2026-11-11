@@ -1,0 +1,10 @@
+# Git ignore rules
+__pycache__/
+*.py[cod]
+*$py.class
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+*.log

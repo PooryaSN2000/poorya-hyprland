@@ -1,0 +1,504 @@
+/* -----------------------------------------------------------------------------
+ * Catppuccin Mocha Razor-Sharp Island Waybar Theme (Zero Haze)
+ * -------------------------------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    -gtk-icon-shadow: none;
+}
+
+/* Entire Bar Window & Container Boxes (100% Strictly Transparent, Zero Matte Box) */
+window#waybar,
+window#waybar > box,
+box,
+widget,
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: #cdd6f4;
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(24, 24, 37, 0.96);
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #cdd6f4;
+    box-shadow: none;
+}
+
+/* Razor-Sharp Floating Islands (Strictly Zero Box-Shadow / Halo) */
+#custom-launcher,
+#workspaces,
+#quicklaunch,
+#group-quicklaunch,
+.quicklaunch,
+#clock,
+#connectivity,
+#group-connectivity,
+.connectivity,
+#hardware,
+#group-hardware,
+.hardware,
+#tray,
+#custom-power {
+    background-color: rgba(30, 30, 46, 0.95);
+    background-clip: padding-box;
+    border: 1px solid #313244;
+    border-radius: 12px;
+    padding: 4px 12px;
+    margin: 0 4px;
+    box-shadow: none;
+    text-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Launcher Button (Pixel-Perfect Center) */
+#custom-launcher {
+    font-size: 15px;
+    color: #cba6f7;
+    padding: 0;
+    margin: 0 4px;
+    min-width: 34px;
+    min-height: 28px;
+}
+
+#custom-launcher:hover {
+    background-color: #cba6f7;
+    color: #11111b;
+    border-color: #cba6f7;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    padding: 3px 8px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    color: #cdd6f4;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.empty {
+    color: #585b70;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: rgba(203, 166, 247, 0.25);
+}
+
+#workspaces button.active {
+    color: #11111b;
+    background: linear-gradient(135deg, #cba6f7, #89b4fa);
+    font-weight: 800;
+    min-width: 26px;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background: #f38ba8;
+    color: #11111b;
+}
+
+/* Island Capsules for Groups (Left Quicklaunch & Right Groups) */
+#quicklaunch,
+#group-quicklaunch,
+.quicklaunch,
+#connectivity,
+#group-connectivity,
+.connectivity,
+#hardware,
+#group-hardware,
+.hardware {
+    padding: 2px 6px;
+}
+
+#quicklaunch widget,
+#quicklaunch > widget,
+#quicklaunch button,
+#quicklaunch label,
+#custom-browser,
+#custom-code,
+#custom-antigravity,
+#custom-notes,
+#custom-terminal,
+#custom-files,
+#custom-telegram,
+#custom-spotify,
+#custom-karing {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 2px 7px;
+    margin: 1px 1px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#custom-browser {
+    color: #89b4fa;
+}
+#custom-browser:hover {
+    color: #ffffff;
+    background: rgba(137, 180, 250, 0.25);
+}
+
+#custom-code {
+    color: #89dceb;
+}
+#custom-code:hover {
+    color: #ffffff;
+    background: rgba(116, 199, 236, 0.25);
+}
+
+#custom-antigravity {
+    color: #cba6f7;
+}
+#custom-antigravity:hover {
+    color: #ffffff;
+    background: rgba(203, 166, 247, 0.25);
+}
+
+#custom-notes {
+    color: #f9e2af;
+}
+#custom-notes:hover {
+    color: #ffffff;
+    background: rgba(249, 226, 175, 0.25);
+}
+
+#custom-terminal {
+    color: #a6e3a1;
+}
+#custom-terminal:hover {
+    color: #ffffff;
+    background: rgba(166, 227, 161, 0.25);
+}
+
+#custom-files {
+    color: #f5c2e7;
+}
+#custom-files:hover {
+    color: #ffffff;
+    background: rgba(245, 194, 231, 0.25);
+}
+
+#custom-telegram {
+    color: #74c7ec;
+}
+#custom-telegram:hover {
+    color: #ffffff;
+    background: rgba(116, 199, 236, 0.25);
+}
+
+#custom-spotify {
+    color: #a6e3a1;
+}
+#custom-spotify:hover {
+    color: #ffffff;
+    background: rgba(166, 227, 161, 0.25);
+}
+
+#custom-karing {
+    color: #94e2d5;
+}
+#custom-karing:hover {
+    color: #ffffff;
+    background: rgba(148, 226, 213, 0.25);
+}
+
+/* Center Clock */
+#clock {
+    color: #cdd6f4;
+    font-weight: 700;
+    padding: 4px 16px;
+}
+
+#clock:hover {
+    border-color: #89b4fa;
+}
+
+/* Base Style for Group Child Items (Connectivity & Hardware) */
+#connectivity widget,
+#connectivity > widget,
+#connectivity label,
+#hardware widget,
+#hardware > widget,
+#hardware label,
+#language,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#power-profiles-daemon {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 2px 7px;
+    margin: 1px 1px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+/* Language Switcher */
+#language {
+    color: #b4befe;
+    font-weight: 700;
+}
+#language:hover {
+    color: #ffffff;
+    background-color: rgba(180, 190, 254, 0.25);
+}
+
+/* Audio */
+#pulseaudio {
+    color: #89b4fa;
+}
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+#pulseaudio:hover {
+    color: #ffffff;
+    background-color: rgba(137, 180, 250, 0.25);
+}
+
+/* Network */
+#network {
+    color: #a6e3a1;
+}
+#network.disconnected {
+    color: #f38ba8;
+}
+#network:hover {
+    color: #ffffff;
+    background-color: rgba(166, 227, 161, 0.25);
+}
+
+/* CPU & Memory */
+#cpu {
+    color: #fab387;
+}
+#cpu:hover {
+    color: #ffffff;
+    background-color: rgba(250, 179, 135, 0.25);
+}
+
+#memory {
+    color: #f9e2af;
+}
+#memory:hover {
+    color: #ffffff;
+    background-color: rgba(249, 226, 175, 0.25);
+}
+
+/* Battery */
+#battery {
+    color: #94e2d5;
+}
+#battery.charging,
+#battery.plugged {
+    color: #a6e3a1;
+}
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink 1s linear infinite;
+}
+#battery:hover {
+    color: #ffffff;
+    background-color: rgba(148, 226, 213, 0.25);
+}
+
+/* Power Profiles Daemon (Symmetric & Centered) */
+#power-profiles-daemon {
+    color: #cba6f7;
+    font-size: 14px;
+    min-width: 16px;
+    padding: 2px 6px;
+}
+#power-profiles-daemon.performance {
+    color: #f38ba8;
+}
+#power-profiles-daemon.balanced {
+    color: #89b4fa;
+}
+#power-profiles-daemon.power-saver {
+    color: #a6e3a1;
+}
+#power-profiles-daemon:hover {
+    color: #ffffff;
+    background-color: rgba(203, 166, 247, 0.25);
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(243, 139, 168, 0.4);
+    }
+}
+
+/* System Tray */
+#tray {
+    padding: 4px 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8;
+}
+
+/* Power Menu Button (Pixel-Perfect Center) */
+#custom-power {
+    font-size: 15px;
+    color: #f38ba8;
+    padding: 0;
+    margin: 0 4px;
+    min-width: 34px;
+    min-height: 28px;
+}
+
+#custom-power:hover {
+    background-color: #f38ba8;
+    color: #11111b;
+    border-color: #f38ba8;
+}
+
+/* Live Screen Recording Indicator (REC Pill) */
+#custom-recorder.recording {
+    background-color: #f38ba8;
+    color: #11111b;
+    border: 1px solid #eba0ac;
+    border-radius: 12px;
+    padding: 4px 12px;
+    margin: 0 4px;
+    font-weight: 800;
+    animation: blink 1s linear infinite;
+}
+
+#custom-recorder.idle {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * GTK Popup Menus inside Waybar (Tray Right-Click, Appindicators, Udiskie)
+ * -------------------------------------------------------------------------- */
+window.popup,
+window.background.popup,
+window.menu {
+    background-color: transparent;
+    background: transparent;
+}
+
+menu,
+.menu,
+GtkMenu {
+    background-color: #1e1e2e;
+    background: #1e1e2e;
+    border: 1px solid #45475a;
+    border-radius: 12px;
+    padding: 6px;
+    color: #cdd6f4;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+menu menuitem,
+.menuitem,
+GtkMenuItem {
+    background-color: transparent;
+    background: transparent;
+    color: #cdd6f4;
+    padding: 6px 14px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+menu menuitem label,
+.menuitem label,
+GtkMenuItem label,
+GtkAccelLabel {
+    color: #cdd6f4;
+    font-weight: 500;
+}
+
+menu menuitem:hover,
+.menuitem:hover,
+GtkMenuItem:hover {
+    background-color: #cba6f7;
+    background: #cba6f7;
+    color: #11111b;
+}
+
+menu menuitem:hover label,
+.menuitem:hover label,
+menu menuitem:hover *,
+GtkMenuItem:hover label,
+GtkMenuItem:hover GtkAccelLabel {
+    color: #11111b;
+}
+
+menu menuitem:disabled,
+menu menuitem:disabled label,
+GtkMenuItem:disabled label {
+    color: #585b70;
+}
+
+menu separator,
+separator {
+    min-height: 1px;
+    background-color: #313244;
+    background: #313244;
+    margin: 5px 6px;
+    border: none;
+}
+
+menu check,
+menu radio {
+    min-height: 14px;
+    min-width: 14px;
+    margin-right: 6px;
+}
+
+menu check:checked,
+menu radio:checked {
+    color: #cba6f7;
+}

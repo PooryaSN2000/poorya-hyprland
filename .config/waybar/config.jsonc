@@ -1,0 +1,288 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 8,
+
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "group/quicklaunch"
+    ],
+    "modules-center": [
+        "custom/recorder",
+        "clock"
+    ],
+    "modules-right": [
+        "group/connectivity",
+        "group/hardware",
+        "tray",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "All Applications (Super + Space)",
+        "on-click": "wofi --show drun --allow-images"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name} {windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<google-chrome>": "",
+            "class<karing>": "󰖂",
+            "class<hiddify>": "󰖂",
+            "class<v2rayn>": "󰖂",
+            "class<v2rayN>": "󰖂",
+            "class<org\\.telegram\\.desktop>": "",
+            "class<telegram-desktop>": "",
+            "class<TelegramDesktop>": "",
+            "class<antigravity>": "󰧑",
+            "class<Antigravity>": "󰧑",
+            "class<spotify>": "",
+            "class<Spotify>": "",
+            "class<code|Code>": "󰨞",
+            "class<ptyxis>": "",
+            "class<kitty>": "",
+            "class<org\\.gnome\\.Terminal>": "",
+            "class<scratchterm>": "",
+            "class<org\\.gnome\\.Nautilus>": "",
+            "class<nautilus>": "",
+            "class<gnome-text-editor>": "󰠮",
+            "class<org\\.gnome\\.Calculator>": "󰃬",
+            "class<gnome-calculator>": "󰃬",
+            "class<gnome-control-center>": "󰒓",
+            "class<scratchpad_window.py>": ""
+        },
+        "on-click": "activate"
+    },
+
+    "group/quicklaunch": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/browser",
+            "custom/code",
+            "custom/antigravity",
+            "custom/notes",
+            "custom/terminal",
+            "custom/files",
+            "custom/telegram",
+            "custom/spotify",
+            "custom/karing"
+        ]
+    },
+
+    "group/connectivity": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/language",
+            "pulseaudio",
+            "network"
+        ]
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+
+    "custom/browser": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Google Chrome (Browser)",
+        "on-click": "google-chrome"
+    },
+
+    "custom/code": {
+        "format": "󰨞",
+        "tooltip": true,
+        "tooltip-format": "Visual Studio Code (Editor)",
+        "on-click": "code"
+    },
+
+    "custom/antigravity": {
+        "format": "󰚩",
+        "tooltip": true,
+        "tooltip-format": "Antigravity (AI IDE)",
+        "on-click": "antigravity"
+    },
+
+    "custom/notes": {
+        "format": "󰠮",
+        "tooltip": true,
+        "tooltip-format": "Notes (Text Editor)",
+        "on-click": "gnome-text-editor"
+    },
+
+    "custom/terminal": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Terminal (Ptyxis / Super + Enter)",
+        "on-click": "ptyxis"
+    },
+
+    "custom/files": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Files (Nautilus / Super + E)",
+        "on-click": "nautilus"
+    },
+
+    "custom/telegram": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Telegram Desktop",
+        "on-click": "telegram-desktop"
+    },
+
+    "custom/spotify": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Spotify (Music / Workspace 9)",
+        "on-click": "spotify"
+    },
+
+    "custom/karing": {
+        "format": "󰖂",
+        "tooltip": true,
+        "tooltip-format": "Karing (VPN / Proxy / Super + S)",
+        "on-click": "karing"
+    },
+
+    "custom/recorder": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "/home/pooryasn/.config/hypr/scripts/recorder_status.sh",
+        "interval": 2,
+        "signal": 8,
+        "on-click": "/home/pooryasn/.config/hypr/scripts/screenrec.sh"
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": " {:%H:%M  󰸗 %a, %d %b}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "EN",
+        "format-ir": "FA",
+        "keyboard-name": "at-translated-set-2-keyboard",
+        "tooltip": true,
+        "tooltip-format": "Language: {}\nClick: Switch Language (Ctrl + Space)",
+        "on-click": "hyprctl switchxkblayout all next"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "/home/pooryasn/.config/hypr/scripts/audioswitcher.py",
+        "on-click-right": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center sound"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰤭 Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}\nClick: Connect to Wi-Fi",
+        "on-click": "/home/pooryasn/.config/hypr/scripts/wifimenu.py",
+        "on-click-right": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power Profile: {profile}\nDriver: {driver}\nClick: Cycle Mode",
+        "tooltip": true,
+        "dont-update-profile-on-scroll": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "󰠱",
+            "power-saver": "󰌪"
+        }
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "󰍛 {usage}%",
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%\nClick: Toggle Resource Monitor",
+        "on-click": "/home/pooryasn/.config/hypr/scripts/sysmonitor.sh"
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "󰘚 {}%",
+        "tooltip": true,
+        "tooltip-format": "Memory: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)\nClick: Toggle Resource Monitor",
+        "on-click": "/home/pooryasn/.config/hypr/scripts/sysmonitor.sh"
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-full": "󰁹 {capacity}%",
+        "tooltip-format": "Battery: {capacity}%\nClick: Power Settings",
+        "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center power",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": true,
+        "tooltip-format": "Power Menu (Lock, Suspend, Reboot, Shutdown)",
+        "on-click": "/home/pooryasn/.config/hypr/scripts/powermenu.sh"
+    }
+}
