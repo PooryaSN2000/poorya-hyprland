@@ -88,7 +88,9 @@ Applications are mapped to dedicated workspaces to maintain a focused workflow:
 | <kbd>Super</kbd> + <kbd>Enter</kbd> | Launch Default Terminal (**Kitty**) |
 | <kbd>Super</kbd> + <kbd>Space</kbd> / <kbd>Super</kbd> + <kbd>R</kbd> | Open Application Launcher (**Wofi**) |
 | <kbd>Super</kbd> + <kbd>E</kbd> | Launch Fast Minimal File Manager (**Thunar**) |
-| <kbd>Super</kbd> + <kbd>N</kbd> | Toggle **Control Center & Quick Settings** (**SwayNC**) |
+| <kbd>Super</kbd> + <kbd>N</kbd> | Dismiss / Close All Notifications (**Dunst**) |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>N</kbd> | Restore Previous Notification History |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>D</kbd> | Toggle Do Not Disturb (DND) Mode |
 | <kbd>Super</kbd> + <kbd>I</kbd> | Open System Settings (**GNOME Control Center**) |
 | <kbd>Super</kbd> + <kbd>Q</kbd> | Close Focused Window |
 | <kbd>Super</kbd> + <kbd>F</kbd> | Toggle Window Fullscreen |
@@ -177,9 +179,10 @@ For full functionality on Ubuntu / Debian-based systems:
 ```bash
 sudo apt update && sudo apt install -y \
   hyprland waybar wofi dunst hyprpaper hyprlock hypridle hyprland-qtutils \
+  thunar tumbler thunar-archive-plugin pavucontrol blueman \
   grim slurp wl-clipboard cliphist playerctl libnotify-bin \
   gir1.2-gtk-3.0 gir1.2-gtklayershell-0.1 python3-psutil \
-  gnome-calculator ptyxis fonts-font-awesome
+  gnome-calculator kitty fonts-font-awesome
 ```
 
 **Recommended Font:** [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) (required for all system glyphs and status icons).

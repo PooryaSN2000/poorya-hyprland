@@ -58,7 +58,6 @@ tooltip {
 #group-hardware,
 .hardware,
 #tray,
-#custom-control-center,
 #custom-power {
     background-color: rgba(30, 30, 46, 0.95);
     background-clip: padding-box;
@@ -399,22 +398,6 @@ tooltip {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #f38ba8;
-}
-
-/* Control Center Button */
-#custom-control-center {
-    font-size: 15px;
-    color: #cba6f7;
-    padding: 0;
-    margin: 0 4px;
-    min-width: 34px;
-    min-height: 28px;
-}
-
-#custom-control-center:hover {
-    background-color: #cba6f7;
-    color: #11111b;
-    border-color: #cba6f7;
 }
 
 /* Power Menu Button (Pixel-Perfect Center) */

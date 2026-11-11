@@ -20,7 +20,6 @@
         "group/connectivity",
         "group/hardware",
         "tray",
-        "custom/control-center",
         "custom/power"
     ],
 
@@ -298,13 +297,6 @@
     "tray": {
         "icon-size": 16,
         "spacing": 8
-    },
-
-    "custom/control-center": {
-        "format": "󰂚",
-        "tooltip": true,
-        "tooltip-format": "Control Center & Quick Settings (Super + N)",
-        "on-click": "swaync-client -t -sw"
     },
 
     "custom/power": {
