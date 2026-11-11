@@ -10,8 +10,8 @@
   "control-center-margin-bottom": 12,
   "control-center-margin-right": 12,
   "control-center-margin-left": 0,
-  "control-center-width": 420,
-  "control-center-height": 720,
+  "control-center-width": 430,
+  "control-center-height": 780,
   "notification-window-width": 400,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -43,50 +43,74 @@
     },
     "volume": {
       "label": "󰕾",
-      "show-per-app": true
+      "show-per-app": false
     },
     "backlight": {
       "label": "󰃠",
-      "device": "nvidia_wmi_ec_backlight"
+      "device": "nvidia_wmi_ec_backlight",
+      "min": 5
     },
     "notifications": {
       "vexpand": true
     },
     "buttons-grid": {
+      "buttons-per-row": 2,
       "actions": [
         {
           "label": "󰤨  Wi-Fi",
           "type": "toggle",
           "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "command": "nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on",
+          "update-command": "nmcli radio wifi | grep -q enabled && echo true || echo false"
         },
         {
           "label": "󰂯  Bluetooth",
           "type": "toggle",
-          "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'",
-          "update-command": "sh -c 'rfkill list bluetooth | grep -q \"Soft blocked: yes\" && echo false || echo true'"
-        },
-        {
-          "label": "󰋋  Audio Out",
-          "type": "normal",
-          "command": "/home/pooryasn/.config/hypr/scripts/audioswitcher.py"
+          "active": false,
+          "command": "rfkill list bluetooth | grep -q yes && rfkill unblock bluetooth || rfkill block bluetooth",
+          "update-command": "rfkill list bluetooth | grep -q yes && echo false || echo true"
         },
         {
           "label": "󰍹  Night Light",
-          "type": "normal",
-          "command": "~/.config/hypr/scripts/nightlight.sh"
+          "type": "toggle",
+          "active": false,
+          "command": "/home/pooryasn/.config/hypr/scripts/nightlight.sh",
+          "update-command": "hyprctl getoption decoration:screen_shader -j | grep -q nightlight.frag && echo true || echo false"
         },
         {
-          "label": "󰓃  Mixer",
+          "label": "󰋋  Audio Output",
           "type": "normal",
-          "command": "pavucontrol"
+          "command": "swaync-client -cp; /home/pooryasn/.config/hypr/scripts/audioswitcher.py"
         },
         {
-          "label": "󰌾  Lock",
+          "label": "󰓃  Audio Mixer",
           "type": "normal",
-          "command": "hyprlock"
+          "command": "swaync-client -cp; pavucontrol"
+        },
+        {
+          "label": "󰂯  Bluetooth Devices",
+          "type": "normal",
+          "command": "swaync-client -cp; blueman-manager"
+        },
+        {
+          "label": "󰤨  Wi-Fi Networks",
+          "type": "normal",
+          "command": "swaync-client -cp; /home/pooryasn/.config/hypr/scripts/wifimenu.py"
+        },
+        {
+          "label": "󰄄  Screenshot",
+          "type": "normal",
+          "command": "swaync-client -cp; grim -g \"$(slurp)\" - | wl-copy && notify-send -a \"Screenshot\" \"Area copied to clipboard\""
+        },
+        {
+          "label": "󰌾  Lock Screen",
+          "type": "normal",
+          "command": "swaync-client -cp; hyprlock"
+        },
+        {
+          "label": "󰐥  Power Menu",
+          "type": "normal",
+          "command": "swaync-client -cp; /home/pooryasn/.config/hypr/scripts/powermenu.sh"
         }
       ]
     }
